@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="home">
+  <ul class="post-list">
+    {% assign sections = site.pages | where: "section", true | sort: "weight" %}
+    {% for section in sections %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ section.url | relative_url }}">{{ section.title | escape }}</a>
+        </h2>
+        <div class="section">
+          {{ content }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
