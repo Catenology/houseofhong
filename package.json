@@ -1,0 +1,21 @@
+{
+  "name": "houseofhong",
+  "version": "1.0.0",
+  "description": "House of Hong restaurant website",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Catenology/houseofhong.git"
+  },
+  "author": "chryw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Catenology/houseofhong/issues"
+  },
+  "homepage": "https://github.com/Catenology/houseofhong#readme"
+}
