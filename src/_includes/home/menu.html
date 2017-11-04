@@ -1,12 +1,3 @@
----
-layout: page
-section: true
-id: menu
-title: Menu
-permalink: /menu/
-weight: 2
----
-
 <div class="menu">
   {% assign fullmenu = site.menus | where: "name", "fullmenu" | first %}
   <h2>{{ fullmenu.title }}</h2>
