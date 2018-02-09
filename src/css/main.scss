@@ -1,0 +1,414 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+$color-white: #fff;
+$color-black: #000;
+$color-grey-light: #d0d7d9;
+$color-grey-dark: #737373;
+$color-grey-darker: #3e3f40;
+$color-grey-darkest: #212226;
+$color-brand: #7b2a3b;
+$color-accent: #f9be40;
+$breakpoint-xs: 320px;
+$breakpoint-sm: 550px;
+$breakpoint-md: 760px;
+$breakpoint-lg: 1080px;
+$breakpoint-xl: 1920px;
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Oxygen", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  &,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.button {
+  padding: 1rem;
+  border: .2rem solid transparent;
+  transition: all ease .2s;
+  &.cta {
+    background-color: $color-accent;
+    color: $color-black;
+    &:hover,
+    &:focus {
+      border-color: darken($color-accent, 20%);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  @media screen and (min-width: $breakpoint-md) {
+    width: 80%;
+  }
+  @media screen and (min-width: $breakpoint-lg) {
+    width: 60%;
+  }
+  @media screen and (min-width: $breakpoint-xl) {
+    width: 50%;
+  }
+}
+.site-header,
+.site-footer {
+  a {
+    &,
+    &:visited {
+      color: $color-white;
+    }
+  }
+}
+
+.site-header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 10000;
+}
+
+.site-nav {
+  position: relative;
+}
+
+#menu-checkbox {
+  display: none;
+}
+
+.menu-icon {
+  color: $color-white;
+  position: absolute;
+  z-index: 1000;
+  left: 1rem;
+  top: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  &.sticky {
+    position: fixed;
+    color: $color-grey-darkest;
+    background-color: $color-white;
+    border-radius: 50%;
+  }
+  .material-icons {
+    font-size: 2rem;
+    display: none;
+    line-height: 2.5rem;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.site-nav-menu-item {
+  padding: 1rem;
+  opacity: 0.8;
+  font-size: 1.2rem;
+  &:hover,
+  &:focus,
+  &.active {
+    opacity: 1;
+  }
+  &.logo {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .site-header {
+    &.sticky {
+      position: fixed;
+      top: 0;
+      background-color: fade-out($color-black, 0.1);
+    }
+  }
+  .site-nav-menu-item {
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+    &.logo {
+      opacity: 1;
+      display: inline-block;
+      width: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .site-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+  }
+
+  .site-nav-menu {
+    background-color: fade-out($color-black, 0.1);
+    height: 100vh;
+    width: inherit;
+    position: relative;
+  }
+
+  .site-nav-menu-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .site-nav-menu-item {
+    font-size: 2rem;
+  }
+  #menu-checkbox {
+    &:not(:checked) {
+      & ~ .menu-icon {
+        .hamburger {
+          display: block;
+        }
+      }
+      & ~ .site-nav-menu {
+        display: none;
+      }
+    }
+    &:checked {
+      & ~ .menu-icon {
+        .close {
+          display: block;
+        }
+      }
+      & ~ .site-nav-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+.hero {
+  background-color: $color-brand;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/299329/food-2689205_1920.jpg);
+  background-size: cover;
+  background-position: center;
+  color: $color-white;
+  overflow: hidden;
+}
+
+.hero-text {
+  text-align: center;
+  .brand {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .primary,
+  .secondary {
+    display: inline-block;
+  }
+  @media screen and (min-width: $breakpoint-sm) {
+    .brand {
+      font-size: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    .primary,
+    .secondary {
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    .brand {
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+      font-size: 3.5rem;
+    }
+    .primary,
+    .secondary {
+      display: block;
+    }
+    .primary {
+      font-size: 1.5rem;
+    }
+    .secondary {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: $color-accent;
+    }
+  }
+  @media screen and (min-width: $breakpoint-lg) {
+    .brand {
+      font-size: 5rem;
+    }
+    .primary {
+      font-size: 2rem;
+    }
+    .secondary {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.restaurant {
+  @media screen and (min-width: $breakpoint-md) {
+    display: table;
+    .about,
+    .info {
+      display: table-cell;
+      vertical-align: top;
+    }
+    .about {
+      padding-right: 4rem;
+      width: 60%;
+    }
+  }
+}
+
+.section {
+  min-height: 400px;
+  padding: 4rem;
+  min-height: 50vh;
+  &.hero {
+    min-height: 20vh;
+  }
+  &.white {
+    background-color: $color-white;
+  }
+  &.grey {
+    background-color: $color-grey-darkest;
+    color: $color-white;
+  }
+}
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu {
+  margin-top: 4rem;
+  position: relative;
+  &:nth-child(2n+1) {
+    .menu-thumbnail {
+      left: 0;
+    }
+  }
+  &:nth-child(2n) {
+    .menu-thumbnail {
+      right: 0;
+    }
+  }
+}
+
+.menu-thumbnail {
+  opacity: 0.3;
+  position: absolute;
+  width: 30vh;
+}
+
+.menu-content {
+  position: relative;
+}
+.menu-item {
+  width: 100%;
+  display: flex;
+  padding-top: 1rem;
+  & > div {
+    width: 50%;
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    width: 50%;
+    &:not(:nth-child(2n + 1)) {
+      padding-left: 3rem;
+    }
+  }
+  @media screen and (min-width: $breakpoint-xl) {
+    width: 33.3333%;
+    &:not(:nth-child(2n + 1)) {
+      padding-left: 0;
+    }
+    &:not(:nth-child(3n + 1)) {
+      padding-left: 5rem;
+    }
+  }
+}
+
+.item-price {
+  text-align: right;
+}
+
+.row {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.columns {
+  width: 100%;
+  @media screen and (min-width: $breakpoint-md) {
+    &:not(:first-child) {
+      margin-left: 4%;
+    }
+    &.six {
+      width: 48%;
+    }
+  }
+}
+
+.swimlane-image {
+  max-height: 450px;
+}
+
+.order-button {
+  margin-top: 4rem;
+}
+
+.site-footer {
+  background-color: $color-accent;
+  color: $color-black;
+  text-align: center;
+  padding: 2rem 6rem;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      display: inline-block;
+      &:not(:first-child) {
+        padding-left: 1rem;
+      }
+    }
+  }
+  a {
+    text-decoration: underline;
+    color: $color-black;
+  }
+  .social {
+    font-size: 2rem;
+  }
+  .copyright {
+    opacity: 0.7;
+  }
+}

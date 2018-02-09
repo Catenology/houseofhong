@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+{% assign sections = "hero|restaurant|explore-menu|delivery|catering" | split: "|" %}
+{% for section in sections %}
+  <section class="section {{section}}" id="{{section}}">
+    <div class="container">
+      {% include index.html/{{section}}.html %}
+    </div>
+  </section>
+{% endfor %}
