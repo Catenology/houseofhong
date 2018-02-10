@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<section class="section hero menu-hero" style="background-image: url({{ site.url }}/images/menu-hero-{{ page.menuType }}.jpg)">
+  <div class="hero-text">
+    <span class="primary">{{ page.menuNameEn }}</span>
+    <span class="secondary" lang="zh">{{ page.menuNameCh }}</span>
+  </div>
+</section>
+<section class="section menu-body">
+  <div class="container">
+    {{ content }}
+  </div>
+</section>

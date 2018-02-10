@@ -1,0 +1,9 @@
+.menu-hero {
+  background-color: $color-brand;
+  color: $color-white;
+  vertical-align: middle;
+  min-height: 10vh;
+  .hero-text {
+    margin-top: 1rem;
+  }
+}

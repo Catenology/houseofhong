@@ -1,0 +1,13 @@
+---
+layout: menu
+menuType: dinnerforone
+menuNameEn: Dinner for one
+menuNameCh: 精品個人套餐
+permalink: explore-menu/dinnerforone
+---
+
+<h2>$15 per person</h2>
+{% assign menus = "mealClassic|mealSzechuan" | split: "|" %}
+{% for menu in menus %}
+  {% include explore-menu/menu.html menu = menu %}
+{% endfor %}

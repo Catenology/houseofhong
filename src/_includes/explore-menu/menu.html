@@ -1,0 +1,33 @@
+{% assign items = site.data.menu | where: "type", menu %}
+<div class="menu">
+ <div class="menu-thumbnail">
+   <img src="{{ site.url }}/images/icon-{{ menu }}.svg" alt="{{menu | capitalize}}"/>
+ </div>
+ <div class="menu-content">
+   <h3 class="menu-title">
+     {{ items[0].typename_en | capitalize }}
+     <span lang="zh">{{ items[0].typename_ch }}</span></h3>
+   <div class="menu-list">
+     {% for item in items | limit: limit %}
+     <div class="menu-item">
+       <div class="item-name">
+         <span>{{ item.name_en }}</span>
+         <span lang="zh">{{ item.name_ch }}</span>
+       </div>
+       <div class="item-price">
+         {% if item.price %}
+         {{ item.price }}
+         {% else %}
+         Seasonal price
+         {% endif %}
+       </div>
+     </div>
+     {% endfor %}
+   </div>
+   {% if limit %}
+   <div class="menu-viewmore">
+     <a href="{{ site.url }}/explore-menu/{{ menu }}.html">View more items</a>
+   </div>
+   {% endif %}
+ </div>
+</div>

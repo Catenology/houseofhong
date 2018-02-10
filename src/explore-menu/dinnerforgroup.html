@@ -1,0 +1,12 @@
+---
+layout: menu
+menuType: dinnerforgroup
+menuNameEn: Dinner for group
+menuNameCh: 晚宴合菜
+permalink: explore-menu/dinnerforgroup
+---
+
+{% assign menus = "groupClassic|groupDeluxe" | split: "|" %}
+{% for menu in menus %}
+  {% include explore-menu/menu.html menu = menu %}
+{% endfor %}

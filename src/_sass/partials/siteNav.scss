@@ -1,0 +1,115 @@
+.site-nav {
+  position: relative;
+}
+
+#menu-checkbox {
+  display: none;
+}
+
+.menu-icon {
+  color: $color-white;
+  position: absolute;
+  z-index: 1000;
+  left: 1rem;
+  top: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  &.sticky {
+    position: fixed;
+    color: $color-grey-darkest;
+    background-color: $color-white;
+    border-radius: 50%;
+  }
+  .material-icons {
+    font-size: 2rem;
+    display: none;
+    line-height: 2.5rem;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.site-nav-menu-item {
+  padding: 1rem;
+  opacity: 0.8;
+  font-size: 1.2rem;
+  &:hover,
+  &:focus,
+  &.active {
+    opacity: 1;
+  }
+  &.logo {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .site-header {
+    &.sticky {
+      position: fixed;
+      top: 0;
+      background-color: fade-out($color-black, 0.1);
+    }
+  }
+  .site-nav-menu-item {
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+    &.logo {
+      opacity: 1;
+      display: inline-block;
+      width: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .site-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+  }
+
+  .site-nav-menu {
+    background-color: fade-out($color-black, 0.1);
+    height: 100vh;
+    width: inherit;
+    position: relative;
+  }
+
+  .site-nav-menu-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .site-nav-menu-item {
+    font-size: 2rem;
+  }
+  #menu-checkbox {
+    &:not(:checked) {
+      & ~ .menu-icon {
+        .hamburger {
+          display: block;
+        }
+      }
+      & ~ .site-nav-menu {
+        display: none;
+      }
+    }
+    &:checked {
+      & ~ .menu-icon {
+        .close {
+          display: block;
+        }
+      }
+      & ~ .site-nav-menu {
+        display: block;
+      }
+    }
+  }
+}

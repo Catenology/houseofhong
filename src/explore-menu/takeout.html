@@ -1,0 +1,12 @@
+---
+layout: menu
+menuType: takeout
+menuNameEn: Takeout menu
+menuNameCh: 外賣菜單
+permalink: explore-menu/takeout
+---
+
+{% assign menus = "appetizer|carbappetizer|soup|szechuan|vegetable|eggfooyoung|seafood|meat|carb" | split: "|" %}
+{% for menu in menus %}
+  {% include explore-menu/menu.html menu = menu %}
+{% endfor %}

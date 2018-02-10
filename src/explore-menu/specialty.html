@@ -1,0 +1,12 @@
+---
+layout: menu
+menuType: specialty
+menuNameEn: Cantonese specialties
+menuNameCh: 精品廣東菜
+permalink: explore-menu/specialty
+---
+
+{% assign menus = "soup|meat|vegetable" | split: "|" %}
+{% for menu in menus %}
+  {% include explore-menu/menu.html menu = menu %}
+{% endfor %}

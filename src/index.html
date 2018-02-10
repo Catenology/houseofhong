@@ -3,10 +3,13 @@ layout: default
 ---
 
 {% assign sections = "hero|restaurant|explore-menu|delivery|catering" | split: "|" %}
-{% for section in sections %}
-  <section class="section {{section}}" id="{{section}}">
+<section class="section hero home-hero" id="home">
+  {% include index/hero.html %}
+</section>
+{% for section in sections offset: 1 %}
+  <section class="section home-{{section}} {% cycle 'white', 'grey' %}" id="{{section}}">
     <div class="container">
-      {% include index.html/{{section}}.html %}
+      {% include index/{{section}}.html %}
     </div>
   </section>
 {% endfor %}

@@ -1,0 +1,12 @@
+---
+layout: menu
+menuType: lunch
+menuNameEn: Lunch specials
+menuNameCh: 特價午餐
+permalink: explore-menu/lunch
+---
+
+<div class="menus">
+  {% assign menu = page.menuType %}
+  {% include explore-menu/menu.html menu = menu %}
+</div>

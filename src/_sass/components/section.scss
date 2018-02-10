@@ -1,0 +1,22 @@
+.section {
+  min-height: 400px;
+  padding: 4rem;
+  min-height: 50vh;
+  &.white {
+    background-color: $color-white;
+    a {
+      &,
+      &:visted {
+        color: $color-brand;
+      }
+    }
+  }
+  &.grey {
+    background-color: $color-grey-darkest;
+    color: $color-white;
+    a,
+    a:visited {
+      color: $color-accent;
+    }
+  }
+}

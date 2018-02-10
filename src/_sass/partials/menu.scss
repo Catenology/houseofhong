@@ -1,0 +1,56 @@
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu {
+  margin-top: 4rem;
+  position: relative;
+  &:nth-child(2n+1) {
+    .menu-thumbnail {
+      left: 0;
+    }
+  }
+  &:nth-child(2n) {
+    .menu-thumbnail {
+      right: 0;
+    }
+  }
+}
+
+.menu-thumbnail {
+  opacity: 0.3;
+  position: absolute;
+  width: 30vh;
+}
+
+.menu-content {
+  position: relative;
+}
+.menu-item {
+  width: 100%;
+  display: flex;
+  padding-top: 1rem;
+  & > div {
+    width: 50%;
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    width: 50%;
+    &:not(:nth-child(2n + 1)) {
+      padding-left: 3rem;
+    }
+  }
+  @media screen and (min-width: $breakpoint-xl) {
+    width: 33.3333%;
+    &:not(:nth-child(2n + 1)) {
+      padding-left: 0;
+    }
+    &:not(:nth-child(3n + 1)) {
+      padding-left: 5rem;
+    }
+  }
+}
+
+.item-price {
+  text-align: right;
+}

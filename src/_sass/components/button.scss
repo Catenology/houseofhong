@@ -1,0 +1,13 @@
+.button {
+  padding: 1rem;
+  border: .2rem solid transparent;
+  transition: all ease .2s;
+  &.cta {
+    background-color: $color-accent;
+    color: $color-black;
+    &:hover,
+    &:focus {
+      border-color: darken($color-accent, 20%);
+    }
+  }
+}
