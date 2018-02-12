@@ -1,3 +1,15 @@
 .swimlane-image {
   max-height: 450px;
 }
+
+.icon {
+  &.grey {
+    fill: $color-grey-darkest;
+  }
+  &.black {
+    fill: $color-black;
+  }
+  &.white {
+    fill: $color-white;
+  }
+}

@@ -1,3 +1,3 @@
 const gulp = require('gulp');
 
-gulp.task('build', ['styles', 'scripts', 'cachebust']);
+gulp.task('build', ['scripts', 'jekyll-build', 'cachebust']);

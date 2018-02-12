@@ -29,3 +29,7 @@ exclude:
   - 'gulpfile.js'
   - 'package.json'
   - 'README.md'
+
+sass:
+  sass_dir: _sass
+  style: compressed

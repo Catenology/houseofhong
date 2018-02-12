@@ -7,7 +7,6 @@ const svgSpriteConfig = {
   mode: {
     defs: {
       dest: '.',
-      example: true,
       dimensions: '-200',
     },
   },
@@ -27,5 +26,5 @@ gulp.task('svg-sprite', () => {
     .pipe(rename({
       basename: 'icons',
     }))
-    .pipe(gulp.dest('src\\images'));
+    .pipe(gulp.dest('src\\_includes'));
 });

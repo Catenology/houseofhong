@@ -1,13 +1,16 @@
 <h2>Explore our menu</h2>
 <div class="menus">
-  {% assign menus = "dimsum|seafood|szechuan" | split: "|" %}
-  {% assign limit = "6" %}
-  {% for menu in menus %}
+  {% assign menus2 = "dimsum|seafood|szechuan" | split: "|" %}
+  {% assign limit = "3" %}
+  {% for menu in menus2 %}
    {% include explore-menu/menu.html menu=menu limit=limit %}
+  {% endfor %}
+  {% assign menus1 = "soup|meat|vegetable" | split: "|" %}
+  {% for menu in menus1 %}
+    {% include explore-menu/menu.html menu=menu limit=limit %}
   {% endfor %}
     <h3>More menus</h3>
     <ul class="menus-more-list">
-      <li><a href="{{ site.url }}/explore-menu/specialty">Cantonese specialties</a></li>
       <li><a href="{{ site.url }}/explore-menu/takeout">Takeout menu</a></li>
       <li><a href="{{ site.url }}/explore-menu/lunch">Lunch specials</a></li>
       <li><a href="{{ site.url }}/explore-menu/dinnerforone">Dinner for one</a></li>

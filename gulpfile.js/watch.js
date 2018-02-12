@@ -1,16 +1,9 @@
 const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
+const { exec } = require('child_process');
 
-gulp.task('watch', [
-  'copy',
-  'styles',
-  'scripts',
-  'cachebust',
-], () => {
-  browserSync.init({
-    server: './dist',
-  });
-  gulp.watch('src/**/*.scss', ['styles']).on('change', browserSync.reload);
-  gulp.watch('src/**/*.jsx', ['scripts']).on('change', browserSync.reload);
-  gulp.watch('src/**/*.html', ['copy']).on('change', browserSync.reload);
+gulp.task('watch', () => {
+  exec('jekyll s --source src');
+  setTimeout(() => {
+    exec('start chrome http://localhost:4000');
+  }, 3000);
 });

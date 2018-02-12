@@ -1,8 +1,10 @@
 {% assign items = site.data.menu | where: "type", menu %}
 <div class="menu">
- <div class="menu-thumbnail">
-   <img src="{{ site.url }}/images/icon-{{ menu }}.svg" alt="{{menu | capitalize}}"/>
- </div>
+  <div class="menu-thumbnail">
+    <svg viewBox="0 0 200 200" class="icon menu-thumbnail black">
+      <use xlink:href="#icon-{{ menu }}" />
+    </svg>
+  </div>
  <div class="menu-content">
    <h3 class="menu-title">
      {{ items[0].typename_en | capitalize }}
@@ -15,10 +17,10 @@
          <span lang="zh">{{ item.name_ch }}</span>
        </div>
        <div class="item-price">
-         {% if item.price %}
-         {{ item.price }}
-         {% else %}
+         {% if item.price > 99 %}
          Seasonal price
+         {% else %}
+         {{ item.price }}
          {% endif %}
        </div>
      </div>

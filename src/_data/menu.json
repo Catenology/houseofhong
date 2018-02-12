@@ -19,7 +19,7 @@
 {"id": 19, "name_en": "Seafood tofu soup", "name_ch": "海鮮豆腐羹", "price": 10.25, "type": "soup", "typename_en": "Soup", "typename_ch": "湯類"},
 {"id": 20, "name_en": "Fish maw with crab meat soup", "name_ch": "蟹肉魚肚羹", "price": 13.95, "type": "soup", "typename_en": "Soup", "typename_ch": "湯類"},
 {"id": 21, "name_en": "Five-star spicy crispy scallops with garlic and chili pepper", "name_ch": "香辣乾貝", "price": 18.5, "type": "szechuan", "typename_en": "Szechuan Heaven", "typename_ch": "特別推薦川菜", "spicy": true},
-{"id": 22, "name_en": "Five-star spicy crab with chili peppers", "name_ch": "香辣蟹", "price": null, "type": "szechuan", "typename_en": "Szechuan Heaven", "typename_ch": "特別推薦川菜", "spicy": true},
+{"id": 22, "name_en": "Five-star spicy crab with chili peppers", "name_ch": "香辣蟹", "price": 999, "type": "szechuan", "typename_en": "Szechuan Heaven", "typename_ch": "特別推薦川菜", "spicy": true},
 {"id": 23, "name_en": "Spicy prawn on soybean cake", "name_ch": "豆花蝦", "price": 17.5, "type": "szechuan", "typename_en": "Szechuan Heaven", "typename_ch": "特別推薦川菜", "spicy": true},
 {"id": 24, "name_en": "Spicy pan fried noodles with choice of chicken, beef, pork, or prawn", "name_ch": "香辣炒面", "price": 10.5, "type": "szechuan", "typename_en": "Szechuan Heaven", "typename_ch": "特別推薦川菜", "spicy": true},
 {"id": 25, "name_en": "Five-star spicy chicken with chili peppers", "name_ch": "辣子鷄", "price": 11.95, "type": "szechuan", "typename_en": "Szechuan Heaven", "typename_ch": "特別推薦川菜", "spicy": true},
