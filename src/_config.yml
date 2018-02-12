@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Authentic Chinese food made with fresh ingredients, and Cantonese traditional and modern dim sum.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://houseofhongseattle.com" # the base hostname & protocol for your site
+url: "https://houseofhong.netlify.com" # the base hostname & protocol for your site
 # url: "http://127.0.0.1:4000" # for test use
 
 # Build settings
