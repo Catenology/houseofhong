@@ -1,14 +1,8 @@
 .home-restaurant {
-  @media screen and (min-width: $breakpoint-md) {
-    display: table;
-    .about,
-    .info {
-      display: table-cell;
-      vertical-align: top;
-    }
-    .about {
-      padding-right: 4rem;
-      width: 60%;
-    }
+  .row {
+    align-items: flex-start;
+  }
+  .note {
+    color: $color-brand;
   }
 }
